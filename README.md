@@ -1,16 +1,26 @@
 # packages_dio
 
-A new Flutter project.
+## Seja bem vindo
 
-## Getting Started
+👋 Olá, seja bem vindo.
 
-This project is a starting point for a Flutter application.
+## Curso
 
-A few resources to get you started if this is your first Flutter project:
+💻 Aplicativo do Bootcamp Formação Flutter Specialist, do professor Danilo Perez na plataforma Digital Innovation One.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Escopo
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+📚 Nesse projeto, vamos focar na utilização de pacotes externos com o Flutter. O objetivo geral é aprender sobre os pacotes, desde a instalação até mesmo utilização
+dos mesmos no projeto. Vamos conhecer diversos pacotes que iram nos ajudar desde a parte visual até mesmo utilização de câmera e muitos mais.
+
+## Foco
+
+😊 O curso é focado em desenvolver um App utilizando alguns pacotes e é a continuação do Bootcamp Formação Flutter Specialist. Sendo assim, achei extremamente interessante fazer.
+
+## Prazo
+
+⚡ Este módulo foi iniciado no dia 02/05/2023.
+
+## Imagens
+
+:camera: Neste momento, eu não possuo imagens, no entanto, em breve irei disponibilizar.

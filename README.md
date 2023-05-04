@@ -10,8 +10,7 @@
 
 ## Escopo
 
-📚 Nesse projeto, vamos focar na utilização de pacotes externos com o Flutter. O objetivo geral é aprender sobre os pacotes, desde a instalação até mesmo utilização
-dos mesmos no projeto. Vamos conhecer diversos pacotes que iram nos ajudar desde a parte visual até mesmo utilização de câmera e muitos mais.
+📚 Nesse projeto, vamos focar na utilização de pacotes externos com o Flutter. O objetivo geral é aprender sobre os pacotes, desde a instalação até mesmo utilização dos mesmos no projeto. Vamos conhecer diversos pacotes que iram nos ajudar desde a parte visual até mesmo utilização de câmera e muitos mais.
 
 ## Foco
 

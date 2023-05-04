@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:packages_dio/percent_indicator/percent_indicator_page.dart';
 
 class CustonDrawer extends StatelessWidget {
   const CustonDrawer({Key? key}) : super(key: key);
@@ -100,7 +101,12 @@ class CustonDrawer extends StatelessWidget {
                     Text("Indicador de porcentagem"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const PercentIndicatorPage()));
+            },
           ),
           const Divider(),
           const SizedBox(

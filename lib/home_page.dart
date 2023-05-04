@@ -1,135 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:packages_dio/shared/widgets/custon_drawer.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  void _openPage(Widget page) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (BuildContext context) => page,
-      ),
-    );
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    tabController = TabController(initialIndex: 0, length: 5, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: CustonDrawer(),
       appBar: AppBar(
-        title: const Text("Circular Percent Indicators"),
+        title: Text(
+          "",
+          //"APP_TITLE".tr(),
+          style: GoogleFonts.roboto(),
+        ),
       ),
-      body: Center(
-        child: ListView(children: <Widget>[
-          CircularPercentIndicator(
-            radius: 100.0,
-            lineWidth: 10.0,
-            percent: 0.8,
-            header: const Text("Icon header"),
-            center: const Icon(
-              Icons.person_pin,
-              size: 50.0,
-              color: Colors.blue,
-            ),
-            backgroundColor: Colors.grey,
-            progressColor: Colors.blue,
-          ),
-          CircularPercentIndicator(
-            radius: 130.0,
-            animation: true,
-            animationDuration: 1200,
-            lineWidth: 15.0,
-            percent: 0.4,
-            center: const Text(
-              "40 hours",
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            circularStrokeCap: CircularStrokeCap.butt,
-            backgroundColor: Colors.yellow,
-            progressColor: Colors.red,
-          ),
-          CircularPercentIndicator(
-            radius: 120.0,
-            lineWidth: 13.0,
-            animation: true,
-            percent: 0.7,
-            center: const Text(
-              "70.0%",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-            ),
-            footer: const Text(
-              "Sales this week",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
-            ),
-            circularStrokeCap: CircularStrokeCap.round,
-            progressColor: Colors.purple,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: CircularPercentIndicator(
-              radius: 60.0,
-              lineWidth: 5.0,
-              percent: 1.0,
-              center: const Text("100%"),
-              progressColor: Colors.green,
-            ),
+      body: TabBarView(
+        controller: tabController,
+        children: [
+          Container(
+            color: Colors.yellow,
           ),
           Container(
-            padding: const EdgeInsets.all(15.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                CircularPercentIndicator(
-                  radius: 45.0,
-                  lineWidth: 4.0,
-                  percent: 0.10,
-                  center: const Text("10%"),
-                  progressColor: Colors.red,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.0,
-                  ),
-                ),
-                CircularPercentIndicator(
-                  radius: 45.0,
-                  lineWidth: 4.0,
-                  percent: 0.30,
-                  center: const Text("30%"),
-                  progressColor: Colors.orange,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.0,
-                  ),
-                ),
-                CircularPercentIndicator(
-                  radius: 45.0,
-                  lineWidth: 4.0,
-                  percent: 0.60,
-                  center: const Text("60%"),
-                  progressColor: Colors.yellow,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                ),
-                CircularPercentIndicator(
-                  radius: 45.0,
-                  lineWidth: 4.0,
-                  percent: 0.90,
-                  center: const Text("90%"),
-                  progressColor: Colors.green,
-                )
-              ],
-            ),
-          )
-        ]),
+            color: Colors.blue,
+          ),
+          Container(
+            color: Colors.red,
+          ),
+          Container(
+            color: Colors.green,
+          ),
+        ],
+      ),
+      bottomNavigationBar: ConvexAppBar.badge(
+        {0: '99+', 1: Icons.assistant_photo, 2: Colors.redAccent},
+        items: [
+          TabItem(icon: Icons.home, title: 'Home'),
+          TabItem(icon: Icons.map, title: 'Discovery'),
+          TabItem(icon: Icons.add, title: 'Add'),
+          TabItem(icon: Icons.message, title: 'Message'),
+          TabItem(icon: Icons.people, title: 'Brasil'),
+        ],
+        onTap: (int i) => tabController.index = i,
+        controller: tabController,
       ),
     );
   }

@@ -45,10 +45,7 @@ class _ConnectivityPlusPageState extends State<ConnectivityPlusPage> {
                     await (Connectivity().checkConnectivity());
                 print(connectivityResult);
                 if (connectivityResult == ConnectivityResult.mobile) {
-                  // I am connected to a mobile network.
-                } else if (connectivityResult == ConnectivityResult.wifi) {
-                  // I am connected to a wifi network.
-                }
+                } else if (connectivityResult == ConnectivityResult.wifi) {}
               },
               child: const Text("Verificar conexão"))
         ],

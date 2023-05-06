@@ -30,11 +30,12 @@ class _CameraPageState extends State<CameraPage> {
       ],
       uiSettings: [
         AndroidUiSettings(
-            toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
-            toolbarWidgetColor: Colors.white,
-            initAspectRatio: CropAspectRatioPreset.original,
-            lockAspectRatio: false),
+          lockAspectRatio: false,
+          toolbarTitle: 'Cropper',
+          toolbarColor: Colors.deepOrange,
+          toolbarWidgetColor: Colors.white,
+          initAspectRatio: CropAspectRatioPreset.original,
+        ),
         IOSUiSettings(
           title: 'Cropper',
         ),
@@ -56,45 +57,46 @@ class _CameraPageState extends State<CameraPage> {
           TextButton(
               onPressed: () async {
                 showModalBottomSheet(
-                    context: context,
-                    builder: (_) {
-                      return Wrap(
-                        children: [
-                          ListTile(
-                            leading: const FaIcon(FontAwesomeIcons.camera),
-                            title: const Text("Camera"),
+                  context: context,
+                  builder: (_) {
+                    return Wrap(
+                      children: [
+                        ListTile(
+                          leading: const FaIcon(FontAwesomeIcons.camera),
+                          title: const Text("Camera"),
+                          onTap: () async {
+                            final ImagePicker _picker = ImagePicker();
+                            photo = await _picker.pickImage(
+                                source: ImageSource.camera);
+                            if (photo != null) {
+                              String path = (await path_provider
+                                      .getApplicationDocumentsDirectory())
+                                  .path;
+                              String name = basename(photo!.path);
+                              await photo!.saveTo("$path/$name");
+
+                              await GallerySaver.saveImage(photo!.path);
+                              Navigator.pop(context);
+
+                              cropImage(photo!);
+                            }
+                          },
+                        ),
+                        ListTile(
+                            leading: const FaIcon(FontAwesomeIcons.images),
+                            title: const Text("Galeria"),
                             onTap: () async {
                               final ImagePicker _picker = ImagePicker();
                               photo = await _picker.pickImage(
-                                  source: ImageSource.camera);
-                              if (photo != null) {
-                                String path = (await path_provider
-                                        .getApplicationDocumentsDirectory())
-                                    .path;
-                                String name = basename(photo!.path);
-                                await photo!.saveTo("$path/$name");
+                                  source: ImageSource.gallery);
+                              Navigator.pop(context);
 
-                                await GallerySaver.saveImage(photo!.path);
-                                Navigator.pop(context);
-
-                                cropImage(photo!);
-                              }
-                            },
-                          ),
-                          ListTile(
-                              leading: const FaIcon(FontAwesomeIcons.images),
-                              title: const Text("Galeria"),
-                              onTap: () async {
-                                final ImagePicker _picker = ImagePicker();
-                                photo = await _picker.pickImage(
-                                    source: ImageSource.gallery);
-                                Navigator.pop(context);
-
-                                cropImage(photo!);
-                              })
-                        ],
-                      );
-                    });
+                              cropImage(photo!);
+                            })
+                      ],
+                    );
+                  },
+                );
               },
               child: const Text("Camera")),
           photo != null

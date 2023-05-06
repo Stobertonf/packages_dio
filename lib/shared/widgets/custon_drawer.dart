@@ -101,8 +101,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -132,8 +134,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -149,8 +153,12 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const BatteryPage()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const BatteryPage(),
+                ),
+              );
             },
           ),
           const Divider(),
@@ -159,8 +167,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -176,8 +186,12 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const AutoSizeTextPage()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const AutoSizeTextPage(),
+                ),
+              );
             },
           ),
           const Divider(),
@@ -186,8 +200,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -222,8 +238,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -253,8 +271,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -285,8 +305,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -309,8 +331,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -333,8 +357,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -351,9 +377,11 @@ class CustonDrawer extends StatelessWidget {
                 )),
             onTap: () async {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => const ConnectivityPlusPage()));
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const ConnectivityPlusPage(),
+                ),
+              );
             },
           ),
           const Divider(),
@@ -362,8 +390,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -379,8 +409,12 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () async {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const GeolocatorPage()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const GeolocatorPage(),
+                ),
+              );
             },
           ),
           const Divider(),
@@ -389,8 +423,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -406,8 +442,12 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () async {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const QrCodePage()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const QrCodePage(),
+                ),
+              );
             },
           ),
           const Divider(),
@@ -416,8 +456,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -433,8 +475,12 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () async {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const CameraPage()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const CameraPage(),
+                ),
+              );
             },
           ),
         ].reversed.toList(),

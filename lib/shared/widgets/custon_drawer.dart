@@ -1,5 +1,15 @@
+import 'dart:io';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:packages_dio/camera/camera_page.dart';
+import 'package:packages_dio/qr_code/qr_code_page.dart';
+import 'package:packages_dio/battery/battery_page.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:packages_dio/geolocator/geolocator_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:packages_dio/auto_size_text/auto_size_text_page.dart';
+import 'package:packages_dio/connectivity_plus/connectivity_plus_page.dart';
 import 'package:packages_dio/percent_indicator/percent_indicator_page.dart';
 
 class CustonDrawer extends StatelessWidget {
@@ -13,8 +23,10 @@ class CustonDrawer extends StatelessWidget {
         children: [
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -29,7 +41,7 @@ class CustonDrawer extends StatelessWidget {
                     Text("Abrir dio"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {},
           ),
           const Divider(),
           const SizedBox(
@@ -37,8 +49,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -53,7 +67,7 @@ class CustonDrawer extends StatelessWidget {
                     Text("Abrir Google Maps"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {},
           ),
           const Divider(),
           const SizedBox(
@@ -61,8 +75,10 @@ class CustonDrawer extends StatelessWidget {
           ),
           InkWell(
             child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
                 width: double.infinity,
                 child: const Row(
                   children: [
@@ -103,9 +119,11 @@ class CustonDrawer extends StatelessWidget {
                 )),
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => const PercentIndicatorPage()));
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const PercentIndicatorPage(),
+                ),
+              );
             },
           ),
           const Divider(),
@@ -130,7 +148,10 @@ class CustonDrawer extends StatelessWidget {
                     Text("Indicador da bateria"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const BatteryPage()));
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -154,7 +175,10 @@ class CustonDrawer extends StatelessWidget {
                     Text("Auto Size Text"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const AutoSizeTextPage()));
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -178,7 +202,19 @@ class CustonDrawer extends StatelessWidget {
                     Text("Intl"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () {
+              var f = NumberFormat('#,###.0#', 'en_US');
+              var fBR = NumberFormat('#,###.0#', 'pt_BR');
+              print(f.format(12345.345));
+              print(fBR.format(123456.345));
+
+              var data = DateTime(2022, 05, 09);
+              print(DateFormat('EEEEE', 'en_US').format(data));
+              print(DateFormat('EEEEE', 'pt_BR').format(data));
+
+              Intl.defaultLocale = 'pt_BR';
+              print(data.toString());
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -202,7 +238,14 @@ class CustonDrawer extends StatelessWidget {
                     Text("pt-br"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () {
+              if (context.locale.toString() == "pt_BR") {
+                context.setLocale(const Locale('en', 'US'));
+              } else {
+                context.setLocale(const Locale('pt', 'BR'));
+              }
+              Navigator.pop(context);
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -226,7 +269,15 @@ class CustonDrawer extends StatelessWidget {
                     Text("Path"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {
+              var directory = await path_provider.getTemporaryDirectory();
+              print(directory.path);
+              directory = await path_provider.getApplicationSupportDirectory();
+              print(directory.path);
+              directory =
+                  await path_provider.getApplicationDocumentsDirectory();
+              print(directory.path);
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -250,7 +301,7 @@ class CustonDrawer extends StatelessWidget {
                     Text("Informações pacote"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {},
           ),
           const Divider(),
           const SizedBox(
@@ -274,7 +325,7 @@ class CustonDrawer extends StatelessWidget {
                     Text("Informações dispositivo"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {},
           ),
           const Divider(),
           const SizedBox(
@@ -298,7 +349,12 @@ class CustonDrawer extends StatelessWidget {
                     Text("Conexão"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const ConnectivityPlusPage()));
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -322,7 +378,10 @@ class CustonDrawer extends StatelessWidget {
                     Text("GPS"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const GeolocatorPage()));
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -346,7 +405,10 @@ class CustonDrawer extends StatelessWidget {
                     Text("QR Code"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const QrCodePage()));
+            },
           ),
           const Divider(),
           const SizedBox(
@@ -370,7 +432,10 @@ class CustonDrawer extends StatelessWidget {
                     Text("Camera"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () async {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const CameraPage()));
+            },
           ),
         ].reversed.toList(),
       ),

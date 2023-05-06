@@ -58,12 +58,18 @@ class _BrasilFieldsPageState extends State<BrasilFieldsPage> {
               ],
             ),
             Center(
-                child: TextButton(
-                    onPressed: () {
-                      print(CPFValidator.isValid(controllerCPF.text));
-                      print(CPFValidator.isValid(CPFValidator.generate()));
-                    },
-                    child: const Text("Continuar")))
+              child: TextButton(
+                onPressed: () {
+                  print(CPFValidator.isValid(controllerCPF.text));
+                  print(
+                    CPFValidator.isValid(
+                      CPFValidator.generate(),
+                    ),
+                  );
+                },
+                child: const Text("Continuar"),
+              ),
+            )
           ],
         ),
       ),

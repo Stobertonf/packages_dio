@@ -37,19 +37,20 @@ class _GeolocatorPageState extends State<GeolocatorPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      appBar: AppBar(
-        title: const Text("GPS"),
-      ),
-      body: Container(
-        child: TextButton(
-          onPressed: () async {
-            Position position = await _determinePosition();
-            print(position);
-          },
-          child: const Text("Obter posição"),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("GPS"),
+        ),
+        body: Container(
+          child: TextButton(
+            onPressed: () async {
+              Position position = await _determinePosition();
+              print(position);
+            },
+            child: const Text("Obter posição"),
+          ),
         ),
       ),
-    ));
+    );
   }
 }

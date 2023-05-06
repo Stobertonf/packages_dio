@@ -22,7 +22,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     // TODO: implement initState
     super.initState();
-    tabController = TabController(initialIndex: 0, length: 5, vsync: this);
+    tabController = TabController(
+      length: 5,
+      vsync: this,
+      initialIndex: 0,
+    );
   }
 
   @override
@@ -55,7 +59,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ],
       ),
       bottomNavigationBar: ConvexAppBar.badge(
-        {0: '99+', 1: Icons.assistant_photo, 2: Colors.redAccent},
+        {
+          0: '99+',
+          1: Icons.assistant_photo,
+          2: Colors.redAccent,
+        },
         items: const [
           TabItem(icon: Icons.home, title: 'Home'),
           TabItem(icon: Icons.map, title: 'Discovery'),

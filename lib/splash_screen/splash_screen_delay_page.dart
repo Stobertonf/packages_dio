@@ -13,7 +13,11 @@ class _SplashScreenDelayPageState extends State<SplashScreenDelayPage> {
   openHome() {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (builder) => HomePage()));
+        context,
+        MaterialPageRoute(
+          builder: (builder) => const HomePage(),
+        ),
+      );
     });
   }
 
@@ -39,18 +43,22 @@ class _SplashScreenDelayPageState extends State<SplashScreenDelayPage> {
           child: AnimatedTextKit(
             animatedTexts: [
               TypewriterAnimatedText(
-                'Hello world!',
+                'Hello!!',
                 textStyle: const TextStyle(
                   fontSize: 32.0,
                   fontWeight: FontWeight.bold,
                 ),
-                speed: const Duration(milliseconds: 100),
+                speed: const Duration(
+                  milliseconds: 100,
+                ),
               ),
             ],
             totalRepeatCount: 4,
-            pause: const Duration(milliseconds: 50),
-            displayFullTextOnTap: true,
+            pause: const Duration(
+              milliseconds: 50,
+            ),
             stopPauseOnTap: true,
+            displayFullTextOnTap: true,
           ),
         ),
       ),

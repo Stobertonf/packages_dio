@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:packages_dio/home_page.dart';
+import 'package:packages_dio/pages/home/home_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 void main() async {

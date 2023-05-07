@@ -1,16 +1,16 @@
 import 'dart:io';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-import 'package:packages_dio/camera/camera_page.dart';
-import 'package:packages_dio/qr_code/qr_code_page.dart';
-import 'package:packages_dio/battery/battery_page.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:packages_dio/geolocator/geolocator_page.dart';
+import 'package:packages_dio/pages/camera/camera_page.dart';
+import 'package:packages_dio/pages/qr_code/qr_code_page.dart';
+import 'package:packages_dio/pages/battery/battery_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
-import 'package:packages_dio/auto_size_text/auto_size_text_page.dart';
-import 'package:packages_dio/connectivity_plus/connectivity_plus_page.dart';
-import 'package:packages_dio/percent_indicator/percent_indicator_page.dart';
+import 'package:packages_dio/pages/geolocator/geolocator_page.dart';
+import 'package:packages_dio/pages/auto_size_text/auto_size_text_page.dart';
+import 'package:packages_dio/pages/percent_indicator/percent_indicator_page.dart';
+import 'package:packages_dio/pages/connectivity_plus/connectivity_plus_page.dart';
 
 class CustonDrawer extends StatelessWidget {
   const CustonDrawer({Key? key}) : super(key: key);
